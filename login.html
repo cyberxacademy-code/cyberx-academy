@@ -1,3 +1,291 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Student Login | CyberX Academy</title><link rel="stylesheet" href="styles.css"></head><body>
-<header class="nav"><div class="wrap navin"><a class="logo" href="index.html">Cyber<span>X</span> Academy</a><a class="back" href="index.html">← Back to website</a></div></header>
-<main><section class="auth"><div class="authbox"><span class="badge">STUDENT PORTAL</span><h1>Welcome back.</h1><p>This is the Version 2 student portal UI. Authentication can be connected to a real backend later.</p><form onsubmit="return demoLogin(event)"><label>Email<input type="email" required placeholder="student@example.com"></label><label>Password<input type="password" required placeholder="••••••••"></label><button class="btn" type="submit">Sign In</button><p id="loginmsg" class="success"></p></form><hr><p>New student? <a href="#">Create an account</a></p></div></section></main><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description"
+content="Student Login | CyberX Academy">
+
+<meta name="author"
+content="CyberX Academy">
+
+<meta name="robots"
+content="index, follow">
+
+<meta name="theme-color"
+content="#06111f">
+
+<title>Student Login | CyberX Academy</title>
+
+<link rel="stylesheet"
+href="styles.css">
+
+</head>
+
+
+<body>
+
+
+<header class="nav">
+
+<div class="wrap navin">
+
+<a class="logo"
+href="index.html">
+
+Cyber<span>X</span> Academy
+
+</a>
+
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="courses.html">Courses</a>
+
+<a href="roadmap.html">Roadmap</a>
+
+<a href="blog.html">Blog</a>
+
+<a href="videos.html">Videos</a>
+
+<a href="about.html">About</a>
+
+<a href="contact.html">Contact</a>
+
+<a class="login active"
+href="login.html">
+Student Login
+</a>
+
+</nav>
+
+
+<button class="menu"
+onclick="toggleNav()">
+☰
+</button>
+
+</div>
+
+</header>
+
+
+
+<main>
+
+
+<section class="login-page">
+
+<div class="login-container">
+
+
+<div class="login-card">
+
+
+<div class="login-logo">
+
+<div class="login-icon">
+🛡️
+</div>
+
+<span class="badge">
+STUDENT PORTAL
+</span>
+
+</div>
+
+
+<h1>
+Welcome back.
+</h1>
+
+
+<p class="login-intro">
+Sign in to access your CyberX Academy
+learning dashboard.
+</p>
+
+
+<form
+onsubmit="return demoLogin(event)">
+
+
+<label>
+
+Email Address
+
+<input
+type="email"
+name="email"
+required
+autocomplete="email"
+placeholder="you@example.com">
+
+</label>
+
+
+
+<label>
+
+Password
+
+<input
+type="password"
+name="password"
+required
+autocomplete="current-password"
+placeholder="Enter your password">
+
+</label>
+
+
+
+<div class="login-options">
+
+<label class="checkbox">
+
+<input
+type="checkbox"
+name="remember">
+
+<span>
+Remember me
+</span>
+
+</label>
+
+
+<a href="#forgot">
+Forgot password?
+</a>
+
+</div>
+
+
+
+<button
+class="btn login-btn"
+type="submit">
+
+Sign In →
+
+</button>
+
+
+<p
+id="loginmsg"
+class="success">
+</p>
+
+
+</form>
+
+
+<div class="login-divider">
+<span>NEW TO CYBERX?</span>
+</div>
+
+
+<a
+class="btn ghost login-register"
+href="contact.html">
+
+Contact CyberX Academy →
+
+</a>
+
+
+<div class="security-note">
+
+<strong>
+🔒 Security Notice
+</strong>
+
+<p>
+This student portal is currently a demonstration
+interface. Real authentication will be added
+through a secure backend before student accounts
+are enabled.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+<div class="wrap foot">
+
+<div>
+
+<strong>
+Cyber<span>X</span> Academy
+</strong>
+
+<p>
+Learn • Practice • Secure
+</p>
+
+</div>
+
+
+<div>
+
+<a href="mailto:support.cyberxacademy@gmail.com">
+
+support.cyberxacademy@gmail.com
+
+</a>
+
+<p>
+© CyberX Academy. 2026. All Rights Reserved.
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+function demoLogin(event) {
+
+event.preventDefault();
+
+const message =
+document.getElementById("loginmsg");
+
+message.textContent =
+"Demo login only — secure student authentication is coming soon.";
+
+return false;
+
+}
+
+</script>
+
+
+</body>
+
+</html>
