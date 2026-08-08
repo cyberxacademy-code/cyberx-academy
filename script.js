@@ -1,0 +1,3 @@
+function toggleNav(){document.querySelector('.nav').classList.toggle('open')}
+function demoSubmit(e){e.preventDefault();document.getElementById('formmsg').textContent='Demo form submitted. Connect this form to your email/backend before launch.';e.target.reset();return false}
+function demoLogin(e){e.preventDefault();document.getElementById('loginmsg').textContent='Demo login successful. Opening student dashboard…';setTimeout(()=>location.href='dashboard.html',700);return false}
