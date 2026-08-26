@@ -1,444 +1,84 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta name="description" content="CyberX Academy — Learn cybersecurity, networking and Linux through beginner-friendly courses, practical labs, visual learning and career-focused guidance.">
-
-  <meta name="keywords" content="CyberX Academy, cybersecurity, cybersecurity courses, ethical hacking, networking, Linux, cyber security training, cybersecurity roadmap">
-
-  <meta name="author" content="CyberX Academy">
-  <meta name="robots" content="index, follow">
-
-  <meta name="theme-color" content="#06111f">
-
-  <meta property="og:title" content="CyberX Academy — Learn • Practice • Secure">
-  <meta property="og:description" content="Learn cybersecurity, networking and Linux through structured lessons, practical labs and career-focused learning.">
-  <meta property="og:type" content="website">
-
-  <title>CyberX Academy | Cybersecurity Education & Practical Labs</title>
-
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="CyberX Academy — Learn cybersecurity, networking and Linux through beginner-friendly courses, practical labs, visual learning and career-focused guidance.">
+<meta name="keywords" content="CyberX Academy, cybersecurity, cybersecurity courses, ethical hacking, networking, Linux, cyber security training, cybersecurity roadmap">
+<meta name="author" content="CyberX Academy">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#06111f">
+<meta property="og:title" content="CyberX Academy — Learn • Practice • Secure">
+<meta property="og:description" content="Learn cybersecurity, networking and Linux through structured lessons, practical labs and career-focused learning.">
+<meta property="og:type" content="website">
+<title>CyberX Academy | Cybersecurity Education & Practical Labs</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.brand-logo{display:inline-flex;align-items:center;gap:10px;min-width:max-content}
+.brand-logo img{width:48px;height:48px;object-fit:cover;border-radius:50%;border:1px solid rgba(56,189,248,.35);box-shadow:0 0 18px rgba(56,189,248,.18)}
+.brand-words{display:flex;flex-direction:column;line-height:.95;letter-spacing:.02em}
+.brand-words .cyberx{font-size:20px;font-weight:900;letter-spacing:.04em;background:linear-gradient(90deg,#f8fafc 0%,#f8fafc 62%,#38bdf8 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-transform:uppercase}
+.brand-words .academy{margin-top:4px;font-size:10px;font-weight:800;letter-spacing:.38em;color:#94a3b8;text-transform:uppercase}
+@media(max-width:600px){.brand-logo img{width:42px;height:42px}.brand-words .cyberx{font-size:17px}.brand-words .academy{font-size:8px;letter-spacing:.28em}}
+</style>
 </head>
-<script src="footer.js"></script>
 <body>
-
 <header class="nav">
-  <div class="wrap navin">
-
-    <a class="logo" href="index.html">
-      Cyber<span>X</span> Academy
-    </a>
-
-    <nav>
-      <a class="active" href="index.html">Home</a>
-      <a href="courses.html">Courses</a>
-      <a href="roadmap.html">Roadmap</a>
-      <a href="blog.html">Blog</a>
-      <a href="videos.html">Videos</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a class="login" href="login.html">Student Login</a>
-    </nav>
-
-    <button class="menu" onclick="toggleNav()">☰</button>
-
-  </div>
+<div class="wrap navin">
+<a class="brand-logo" href="index.html" aria-label="CyberX Academy Home">
+<img src="assets/cyberx-logo-mark.png" alt="CyberX Academy shield logo">
+<span class="brand-words"><span class="cyberx">CyberX</span><span class="academy">Academy</span></span>
+</a>
+<nav>
+<a class="active" href="index.html">Home</a>
+<a href="courses.html">Courses</a>
+<a href="roadmap.html">Roadmap</a>
+<a href="blog.html">Blog</a>
+<a href="videos.html">Videos</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a class="login" href="login.html">Student Login</a>
+</nav>
+<button class="menu" onclick="toggleNav()" aria-label="Open menu">☰</button>
+</div>
 </header>
-
-
 <main>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-
-      <div>
-
-        <span class="badge">
-          CYBERSECURITY EDUCATION • BEGINNER FRIENDLY
-        </span>
-
-        <h1>
-          Learn cybersecurity.<br>
-          <span>Build real skills.</span>
-        </h1>
-
-        <p>
-          Master cybersecurity, networking and Linux through structured
-          lessons, visual learning, practical labs and career-focused guidance.
-        </p>
-
-        <div class="actions">
-          <a class="btn" href="courses.html">
-            Explore Courses →
-          </a>
-
-          <a class="btn ghost" href="roadmap.html">
-            View Roadmap
-          </a>
-        </div>
-
-        <div class="trust">
-          <span>✓ Beginner-first</span>
-          <span>✓ Practical learning</span>
-          <span>✓ Career focused</span>
-        </div>
-
-      </div>
-
-
-      <!-- TERMINAL -->
-      <div class="terminal">
-
-        <div>$ whoami</div>
-        <p>cybersecurity_learner</p>
-
-        <div>$ skills --learn</div>
-
-        <p>Networking &nbsp; ✓</p>
-        <p>Linux &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ✓</p>
-        <p>Security &nbsp;&nbsp;&nbsp;&nbsp; ✓</p>
-        <p>Practical Labs ✓</p>
-
-        <div>$ status</div>
-
-        <strong>Ready to learn_</strong>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- FOUNDATION -->
-  <section>
-    <div class="wrap">
-
-      <div class="head">
-
-        <span class="eyebrow">
-          START HERE
-        </span>
-
-        <h2>
-          Build your cybersecurity foundation.
-        </h2>
-
-        <p>
-          Follow a structured learning path instead of jumping randomly
-          between tools and technologies.
-        </p>
-
-      </div>
-
-
-      <div class="cards">
-
-        <article>
-
-          <div class="icon">🛡️</div>
-
-          <h3>
-            Cybersecurity Basics
-          </h3>
-
-          <p>
-            Learn threats, vulnerabilities, authentication,
-            malware and core security principles.
-          </p>
-
-          <a href="courses.html">
-            Learn more →
-          </a>
-
-        </article>
-
-
-        <article>
-
-          <div class="icon">🐧</div>
-
-          <h3>
-            Linux for Beginners
-          </h3>
-
-          <p>
-            Understand the terminal, files, permissions,
-            processes and essential Linux commands.
-          </p>
-
-          <a href="courses.html">
-            Learn more →
-          </a>
-
-        </article>
-
-
-        <article>
-
-          <div class="icon">🌐</div>
-
-          <h3>
-            Networking Essentials
-          </h3>
-
-          <p>
-            Learn IP, DNS, DHCP, TCP/IP, ports, routers,
-            firewalls and network fundamentals.
-          </p>
-
-          <a href="courses.html">
-            Learn more →
-          </a>
-
-        </article>
-
-
-        <article>
-
-          <div class="icon">💻</div>
-
-          <h3>
-            Practical Security Labs
-          </h3>
-
-          <p>
-            Turn theory into hands-on experience through
-            safe and legal cybersecurity practice.
-          </p>
-
-          <a href="courses.html">
-            Learn more →
-          </a>
-
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ROADMAP -->
-  <section class="band">
-
-    <div class="wrap split">
-
-      <div>
-
-        <span class="eyebrow">
-          LEARNING ROADMAP
-        </span>
-
-        <h2>
-          From zero to cybersecurity confidence.
-        </h2>
-
-        <p>
-          Start with computer fundamentals, master networking,
-          understand security and then build practical skills.
-        </p>
-
-        <a class="btn" href="roadmap.html">
-          See Full Roadmap
-        </a>
-
-      </div>
-
-
-      <div class="timeline">
-
-        <div>
-          <span>01</span>
-          Computer &amp; OS Basics
-        </div>
-
-        <div>
-          <span>02</span>
-          Networking Fundamentals
-        </div>
-
-        <div>
-          <span>03</span>
-          Cybersecurity Concepts
-        </div>
-
-        <div>
-          <span>04</span>
-          Tools, Labs &amp; Projects
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- WHY CYBERX -->
-  <section>
-
-    <div class="wrap">
-
-      <div class="head">
-
-        <span class="eyebrow">
-          WHY CYBERX ACADEMY?
-        </span>
-
-        <h2>
-          Learn with a clear direction.
-        </h2>
-
-        <p>
-          CyberX Academy focuses on understanding concepts,
-          practicing skills and building cybersecurity confidence.
-        </p>
-
-      </div>
-
-
-      <div class="cards">
-
-        <article>
-
-          <div class="icon">📚</div>
-
-          <h3>
-            Structured Learning
-          </h3>
-
-          <p>
-            Learn step by step from computer and networking
-            fundamentals to cybersecurity.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <div class="icon">🧪</div>
-
-          <h3>
-            Practice Focused
-          </h3>
-
-          <p>
-            Understand concepts and apply them through
-            safe, legal and practical exercises.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <div class="icon">🎯</div>
-
-          <h3>
-            Career Focused
-          </h3>
-
-          <p>
-            Build knowledge that can support your journey
-            toward cybersecurity and IT careers.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <div class="icon">🌱</div>
-
-          <h3>
-            Beginner Friendly
-          </h3>
-
-          <p>
-            Complex cybersecurity concepts are explained
-            in a simple and understandable way.
-          </p>
-
-        </article>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- FINAL CTA -->
-  <section class="cta-wrap">
-
-    <div class="wrap cta">
-
-      <span class="eyebrow">
-        START YOUR JOURNEY
-      </span>
-
-      <h2>
-        Ready to start learning cybersecurity?
-      </h2>
-
-      <p>
-        Explore the courses and follow the CyberX Academy
-        roadmap to build your foundation.
-      </p>
-
-      <div class="actions">
-
-        <a class="btn" href="courses.html">
-          Explore Courses →
-        </a>
-
-        <a class="btn ghost" href="roadmap.html">
-          View Roadmap
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
+<section class="hero">
+<div class="wrap hero-grid">
+<div>
+<span class="badge">CYBERSECURITY EDUCATION • BEGINNER FRIENDLY</span>
+<h1>Learn cybersecurity.<br><span>Build real skills.</span></h1>
+<p>Master cybersecurity, networking and Linux through structured lessons, visual learning, practical labs and career-focused guidance.</p>
+<div class="actions"><a class="btn" href="courses.html">Explore Courses →</a><a class="btn ghost" href="roadmap.html">View Roadmap</a></div>
+<div class="trust"><span>✓ Beginner-first</span><span>✓ Practical learning</span><span>✓ Career focused</span></div>
+</div>
+<div class="terminal">
+<div>$ whoami</div><p>cybersecurity_learner</p>
+<div>$ skills --learn</div><p>Networking &nbsp; ✓</p><p>Linux &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ✓</p><p>Security &nbsp;&nbsp;&nbsp;&nbsp; ✓</p><p>Practical Labs ✓</p>
+<div>$ status</div><strong>Ready to learn_</strong>
+</div>
+</div>
+</section>
+<section><div class="wrap"><div class="head"><span class="eyebrow">START HERE</span><h2>Build your cybersecurity foundation.</h2><p>Follow a structured learning path instead of jumping randomly between tools and technologies.</p></div>
+<div class="cards">
+<article><div class="icon">🛡️</div><h3>Cybersecurity Basics</h3><p>Learn threats, vulnerabilities, authentication, malware and core security principles.</p><a href="courses.html">Learn more →</a></article>
+<article><div class="icon">🐧</div><h3>Linux for Beginners</h3><p>Understand the terminal, files, permissions, processes and essential Linux commands.</p><a href="courses.html">Learn more →</a></article>
+<article><div class="icon">🌐</div><h3>Networking Essentials</h3><p>Learn IP, DNS, DHCP, TCP/IP, ports, routers, firewalls and network fundamentals.</p><a href="courses.html">Learn more →</a></article>
+<article><div class="icon">💻</div><h3>Practical Security Labs</h3><p>Turn theory into hands-on experience through safe and legal cybersecurity practice.</p><a href="courses.html">Learn more →</a></article>
+</div></div></section>
+<section class="band"><div class="wrap split"><div><span class="eyebrow">LEARNING ROADMAP</span><h2>From zero to cybersecurity confidence.</h2><p>Start with computer fundamentals, master networking, understand security and then build practical skills.</p><a class="btn" href="roadmap.html">See Full Roadmap</a></div>
+<div class="timeline"><div><span>01</span> Computer &amp; OS Basics</div><div><span>02</span> Networking Fundamentals</div><div><span>03</span> Cybersecurity Concepts</div><div><span>04</span> Tools, Labs &amp; Projects</div></div></div></section>
+<section><div class="wrap"><div class="head"><span class="eyebrow">WHY CYBERX ACADEMY?</span><h2>Learn with a clear direction.</h2><p>CyberX Academy focuses on understanding concepts, practicing skills and building cybersecurity confidence.</p></div>
+<div class="cards">
+<article><div class="icon">📚</div><h3>Structured Learning</h3><p>Learn step by step from computer and networking fundamentals to cybersecurity.</p></article>
+<article><div class="icon">🧪</div><h3>Practice Focused</h3><p>Understand concepts and apply them through safe, legal and practical exercises.</p></article>
+<article><div class="icon">🎯</div><h3>Career Focused</h3><p>Build knowledge that can support your journey toward cybersecurity and IT careers.</p></article>
+<article><div class="icon">🌱</div><h3>Beginner Friendly</h3><p>Complex cybersecurity concepts are explained in a simple and understandable way.</p></article>
+</div></div></section>
+<section class="cta-wrap"><div class="wrap cta"><span class="eyebrow">START YOUR JOURNEY</span><h2>Ready to start learning cybersecurity?</h2><p>Explore the courses and follow the CyberX Academy roadmap to build your foundation.</p><div class="actions"><a class="btn" href="courses.html">Explore Courses →</a><a class="btn ghost" href="roadmap.html">View Roadmap</a></div></div></section>
 </main>
-
-
-<!-- FOOTER -->
-<footer>
-
-  <div class="wrap foot">
-
-    <div>
-
-      <strong>
-        Cyber<span>X</span> Academy
-      </strong>
-
-      <p>
-        Learn • Practice • Secure
-      </p>
-
-    </div>
-
-    <div>
-      official.cyberxacademy@gmail.com
-    </div>
-
-  </div>
-
-</footer>
-
-
-<script src="script.js"></script>
+<footer><div class="wrap foot"><div><strong>Cyber<span>X</span> Academy</strong><p>Learn • Practice • Secure</p></div><div><a href="mailto:support.cyberxacademy@gmail.com">support.cyberxacademy@gmail.com</a><p>© CyberX Academy. 2026. All Rights Reserved.</p></div></div></footer>
 <script src="script.js"></script>
 <script src="footer.js"></script>
-</body>
-</html>
 </body>
 </html>
