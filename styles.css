@@ -1414,3 +1414,111 @@ button:focus-visible {
   }
 
 }
+/* =========================================
+   CYBERX SCANNER - FINAL VERSION
+   ========================================= */
+
+.cyber-profile-image {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Remove the old scanner completely */
+.cyber-profile-image .scan-beam {
+  display: none !important;
+}
+
+/* Moving green scanner line */
+.cyber-profile-image::after {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 0;
+
+  height: 4px;
+
+  z-index: 100;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 8px #22c55e,
+    0 0 20px #22c55e,
+    0 0 40px #22c55e,
+    0 0 70px rgba(34, 197, 94, 0.8);
+
+  animation: cyberScanFinal 2.5s linear infinite;
+
+  pointer-events: none;
+}
+
+/* glowing trail under the scanner */
+.cyber-profile-image::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 0;
+
+  height: 80px;
+
+  z-index: 99;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(34,197,94,0.22),
+    rgba(34,197,94,0.08),
+    transparent
+  );
+
+  animation: cyberScanTrail 2.5s linear infinite;
+
+  pointer-events: none;
+}
+
+@keyframes cyberScanFinal {
+
+  0% {
+    top: 0;
+  }
+
+  50% {
+    top: calc(100% - 4px);
+  }
+
+  100% {
+    top: 0;
+  }
+
+}
+
+@keyframes cyberScanTrail {
+
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  50% {
+    top: calc(100% - 80px);
+    opacity: 1;
+  }
+
+  92% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 0;
+    opacity: 0;
+  }
+
+}
