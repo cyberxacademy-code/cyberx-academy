@@ -69,45 +69,14 @@
 
     <div class="cyber-grid"></div>
 
-    <div class="image-terminal">
+   <div class="image-terminal">
 
-      <div class="terminal-line">
-        <span>$</span> whoami
-      </div>
+  <div class="typing-line">
+    <span id="codeLine"></span>
+    <span class="cursor">▌</span>
+  </div>
 
-      <div class="terminal-value">
-        cybersecurity_learner
-      </div>
-
-      <div class="terminal-line">
-        <span>$</span> skills --learn
-      </div>
-
-      <div class="terminal-value">
-        Networking <b>✓</b>
-      </div>
-
-      <div class="terminal-value">
-        Linux <b>✓</b>
-      </div>
-
-      <div class="terminal-value">
-        Security <b>✓</b>
-      </div>
-
-      <div class="terminal-value">
-        Practical Labs <b>✓</b>
-      </div>
-
-      <div class="terminal-line terminal-status">
-        <span>$</span> status
-      </div>
-
-      <div class="terminal-ready">
-        Ready to learn_
-      </div>
-
-    </div>
+</div>
 
     <div class="scan-beam"></div>
 
@@ -171,7 +140,68 @@
 <div class="timeline"><div><span>01</span> Computer &amp; OS Basics</div><div><span>02</span> Networking Fundamentals</div><div><span>03</span> Cybersecurity Concepts</div><div><span>04</span> Tools, Labs &amp; Projects</div></div></div></section>
 <section><div class="wrap"><div class="head"><span class="eyebrow">WHY CYBERX ACADEMY?</span><h2>Learn with a clear direction.</h2><p>CyberX Academy focuses on understanding concepts, practicing skills and building cybersecurity confidence.</p></div>
 <div class="cards">
-<article><div class="icon">📚</div><h3>Structured Learning</h3><p>Learn step by step from computer and networking fundamentals to cybersecurity.</p></article>
+<script>
+(function () {
+
+  const output = document.getElementById("codeLine");
+
+  if (!output) return;
+
+  const lines = [
+    { text: "$ whoami", color: "#22c55e" },
+    { text: "cybersecurity_learner", color: "#f97316" },
+    { text: "$ skills --learn", color: "#ef4444" },
+    { text: "Networking ✓", color: "#22c55e" },
+    { text: "Linux ✓", color: "#f97316" },
+    { text: "Security ✓", color: "#ef4444" },
+    { text: "Practical Labs ✓", color: "#22c55e" },
+    { text: "$ status", color: "#f97316" },
+    { text: "Ready to learn_", color: "#22c55e" }
+  ];
+
+  let lineIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+
+  function typeWriter() {
+
+    const current = lines[lineIndex];
+
+    output.style.color = current.color;
+
+    if (!deleting) {
+
+      output.textContent =
+        current.text.substring(0, charIndex + 1);
+
+      charIndex++;
+
+      if (charIndex >= current.text.length) {
+        deleting = true;
+        setTimeout(typeWriter, 900);
+        return;
+      }
+
+    } else {
+
+      output.textContent =
+        current.text.substring(0, charIndex - 1);
+
+      charIndex--;
+
+      if (charIndex <= 0) {
+        deleting = false;
+        lineIndex = (lineIndex + 1) % lines.length;
+      }
+    }
+
+    setTimeout(typeWriter, deleting ? 35 : 65);
+  }
+
+  typeWriter();
+
+})();
+</script>
 <article><div class="icon">🧪</div><h3>Practice Focused</h3><p>Understand concepts and apply them through safe, legal and practical exercises.</p></article>
 <article><div class="icon">🎯</div><h3>Career Focused</h3><p>Build knowledge that can support your journey toward cybersecurity and IT careers.</p></article>
 <article><div class="icon">🌱</div><h3>Beginner Friendly</h3><p>Complex cybersecurity concepts are explained in a simple and understandable way.</p></article>
