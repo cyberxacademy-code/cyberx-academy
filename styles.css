@@ -1522,3 +1522,56 @@ button:focus-visible {
   }
 
 }
+/* =========================================
+   CYBERX REAL-TIME PHOTO SCANNER
+   ========================================= */
+
+.cyber-profile-image {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.scan-line-moving {
+  position: absolute !important;
+
+  left: 0 !important;
+  right: 0 !important;
+
+  top: 0 !important;
+
+  height: 4px !important;
+
+  z-index: 1000 !important;
+
+  background: #22c55e !important;
+
+  box-shadow:
+    0 0 8px #22c55e,
+    0 0 20px #22c55e,
+    0 0 40px #22c55e,
+    0 0 70px rgba(34,197,94,.9) !important;
+
+  pointer-events: none !important;
+
+  will-change: transform !important;
+}
+
+.scan-line-moving::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 0;
+
+  height: 70px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(34,197,94,.30),
+    rgba(34,197,94,.10),
+    transparent
+  );
+}
