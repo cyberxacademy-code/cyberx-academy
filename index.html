@@ -3,822 +3,141 @@
 
 <head>
 
-<meta charset="utf-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1">
-
-<meta name="description"
-content="CyberX Academy — Learn cybersecurity, networking and Linux through beginner-friendly courses, practical labs, visual learning and career-focused guidance.">
-
-<meta name="keywords"
-content="CyberX Academy, cybersecurity, cybersecurity courses, ethical hacking, networking, Linux, cyber security training, cybersecurity roadmap">
-
-<meta name="author"
-content="CyberX Academy">
-
-<meta name="robots"
-content="index, follow">
-
-<meta name="theme-color"
-content="#06111f">
-
-<meta property="og:title"
-content="CyberX Academy — Learn • Practice • Secure">
-
-<meta property="og:description"
-content="Learn cybersecurity, networking and Linux through structured lessons, practical labs and career-focused learning.">
-
-<meta property="og:type"
-content="website">
-
-
-<title>
-CyberX Academy | Cybersecurity Education & Practical Labs
-</title>
-
-
-<link rel="stylesheet"
-href="styles.css">
-
-
-<style>
-
-/* =========================================================
-   CYBERX BRAND HEADER
-   ========================================================= */
-
-.brand-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-width: max-content;
-}
-
-.brand-logo img {
-  width: 48px;
-  height: 48px;
-  object-fit: cover;
-  border-radius: 50%;
-
-  border: 1px solid rgba(56,189,248,.35);
-
-  box-shadow:
-    0 0 18px rgba(56,189,248,.18);
-}
-
-.brand-words {
-  display: flex;
-  flex-direction: column;
-  line-height: .95;
-  letter-spacing: .02em;
-}
-
-.brand-words .cyberx {
-  font-size: 20px;
-  font-weight: 900;
-  letter-spacing: .04em;
-
-  background:
-    linear-gradient(
-      90deg,
-      #f8fafc 0%,
-      #f8fafc 62%,
-      #38bdf8 100%
-    );
-
-  -webkit-background-clip: text;
-  background-clip: text;
-
-  color: transparent;
-
-  text-transform: uppercase;
-}
-
-.brand-words .academy {
-  margin-top: 4px;
-
-  font-size: 10px;
-  font-weight: 800;
-
-  letter-spacing: .38em;
-
-  color: #94a3b8;
-
-  text-transform: uppercase;
-}
-
-
-/* =========================================================
-   CYBERX PHOTO TERMINAL
-   ========================================================= */
-
-.terminal.cyber-profile {
-  position: relative;
-
-  width: 100%;
-  max-width: 470px;
-
-  min-height: 0;
-
-  padding: 14px !important;
-
-  box-sizing: border-box;
-
-  overflow: hidden;
-
-  border:
-    1px solid
-    rgba(34,197,94,.30) !important;
-
-  border-radius:
-    24px !important;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(3,18,18,.96),
-      rgba(5,12,25,.98)
-    ) !important;
-
-  box-shadow:
-    0 20px 60px rgba(0,0,0,.35),
-    0 0 30px rgba(34,197,94,.08);
-}
-
-
-/* =========================================================
-   SCANNER HEADER
-   ========================================================= */
-
-.cyber-profile-header {
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 8px;
-
-  margin-bottom: 12px;
-
-  color: #86efac;
-
-  font-size: 10px;
-
-  font-weight: 800;
-
-  letter-spacing: .10em;
-}
-
-.scanner-dot {
-
-  width: 8px;
-  height: 8px;
-
-  flex: 0 0 auto;
-
-  border-radius: 50%;
-
-  background:
-    #22c55e;
-
-  box-shadow:
-    0 0 8px #22c55e,
-    0 0 18px rgba(34,197,94,.70);
-
-  animation:
-    scannerPulse 1.3s infinite;
-}
-
-.live-tag {
-
-  margin-left: auto;
-
-  padding:
-    4px 7px;
-
-  border:
-    1px solid
-    rgba(34,197,94,.25);
-
-  border-radius:
-    6px;
-
-  background:
-    rgba(34,197,94,.06);
-
-  color:
-    #86efac;
-
-  font-size:
-    8px;
-}
-
-
-/* =========================================================
-   PHOTO CONTAINER
-   ========================================================= */
-
-.cyber-profile-image {
-
-  position: relative;
-
-  width: 100%;
-
-  aspect-ratio:
-    4 / 5;
-
-  overflow: hidden;
-
-  border-radius:
-    18px;
-
-  border:
-    1px solid
-    rgba(34,197,94,.25);
-
-  background:
-    #020617;
-}
-
-.cyber-profile-image img {
-
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  object-position: center;
-
-  filter:
-    brightness(.94)
-    contrast(1.04)
-    saturate(.96);
-}
-
-
-/* =========================================================
-   SCAN GRID
-   ========================================================= */
-
-.cyber-grid {
-
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 2;
-
-  pointer-events: none;
-
-  background:
-    linear-gradient(
-      rgba(34,197,94,.035) 1px,
-      transparent 1px
-    );
-
-  background-size:
-    100% 7px;
-}
-
-
-/* =========================================================
-   TRANSPARENT TYPEWRITER HUD
-   ========================================================= */
-
-.image-terminal {
-
-  position: absolute;
-
-  top: 14px;
-  left: 14px;
-
-  z-index: 20;
-
-  width: auto;
-
-  max-width: 88%;
-
-  margin: 0 !important;
-
-  padding: 0 !important;
-
-  background: transparent !important;
-
-  border: none !important;
-
-  box-shadow: none !important;
-
-  backdrop-filter: none !important;
-
-  pointer-events: none;
-}
-
-.typing-line {
-
-  display: inline;
-
-  white-space:
-    pre-wrap;
-
-  font-family:
-    "Courier New",
-    Consolas,
-    Monaco,
-    monospace;
-
-  font-size:
-    13px;
-
-  font-weight:
-    800;
-
-  line-height:
-    1.55;
-
-  letter-spacing:
-    .03em;
-
-  text-shadow:
-    0 0 6px currentColor,
-    0 0 14px currentColor;
-}
-
-.cursor {
-
-  display:
-    inline-block;
-
-  margin-left:
-    2px;
-
-  color:
-    #22c55e;
-
-  animation:
-    cursorBlink .7s steps(1) infinite;
-}
-
-
-/* =========================================================
-   GREEN SCAN BEAM
-   ========================================================= */
-
-.scan-beam {
-
-  position:
-    absolute;
-
-  left:
-    0;
-
-  right:
-    0;
-
-  top:
-    0;
-
-  height:
-    3px;
-
-  z-index:
-    30;
-
-  background:
-    #22c55e;
-
-  box-shadow:
-    0 0 8px #22c55e,
-    0 0 22px #22c55e,
-    0 0 48px rgba(34,197,94,.75);
-
-  animation:
-    cyberScan 3s linear infinite;
-}
-
-.scan-beam::after {
-
-  content:
-    "";
-
-  position:
-    absolute;
-
-  left:
-    0;
-
-  right:
-    0;
-
-  top:
-    0;
-
-  height:
-    60px;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(34,197,94,.18),
-      transparent
-    );
-}
-
-
-/* =========================================================
-   SYSTEM SECURED LABEL
-   ========================================================= */
-
-.scan-label {
-
-  position:
-    absolute;
-
-  left:
-    12px;
-
-  bottom:
-    12px;
-
-  z-index:
-    40;
-
-  padding:
-    7px 10px;
-
-  border:
-    1px solid
-    rgba(34,197,94,.28);
-
-  border-radius:
-    7px;
-
-  background:
-    rgba(2,6,23,.68);
-
-  color:
-    #bbf7d0;
-
-  font-size:
-    9px;
-
-  font-weight:
-    800;
-
-  letter-spacing:
-    .08em;
-}
-
-
-/* =========================================================
-   HUD CORNERS
-   ========================================================= */
-
-.corner {
-
-  position:
-    absolute;
-
-  z-index:
-    25;
-
-  width:
-    24px;
-
-  height:
-    24px;
-
-  pointer-events:
-    none;
-}
-
-.top-left {
-
-  top:
-    10px;
-
-  left:
-    10px;
-
-  border-top:
-    2px solid #22c55e;
-
-  border-left:
-    2px solid #22c55e;
-}
-
-.top-right {
-
-  top:
-    10px;
-
-  right:
-    10px;
-
-  border-top:
-    2px solid #22c55e;
-
-  border-right:
-    2px solid #22c55e;
-}
-
-.bottom-left {
-
-  bottom:
-    10px;
-
-  left:
-    10px;
-
-  border-bottom:
-    2px solid #22c55e;
-
-  border-left:
-    2px solid #22c55e;
-}
-
-.bottom-right {
-
-  bottom:
-    10px;
-
-  right:
-    10px;
-
-  border-bottom:
-    2px solid #22c55e;
-
-  border-right:
-    2px solid #22c55e;
-}
-
-
-/* =========================================================
-   SECURITY INFORMATION
-   ========================================================= */
-
-.cyber-profile-info {
-
-  padding:
-    12px 3px 8px;
-}
-
-.cyber-profile-info > div:first-child {
-
-  display:
-    flex;
-
-  align-items:
-    center;
-
-  justify-content:
-    space-between;
-
-  gap:
-    10px;
-}
-
-.cyber-profile-info strong {
-
-  color:
-    #f8fafc;
-
-  font-size:
-    12px;
-
-  letter-spacing:
-    .06em;
-}
-
-.cyber-profile-info span {
-
-  color:
-    #64748b;
-
-  font-size:
-    8px;
-
-  font-weight:
-    700;
-
-  letter-spacing:
-    .07em;
-}
-
-
-/* =========================================================
-   SECURITY STATS
-   ========================================================= */
-
-.cyber-stats {
-
-  display:
-    grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap:
-    7px;
-
-  margin-top:
-    10px;
-}
-
-.cyber-stats > div {
-
-  padding:
-    8px;
-
-  text-align:
-    center;
-
-  border-radius:
-    10px;
-
-  border:
-    1px solid
-    rgba(56,189,248,.10);
-
-  background:
-    rgba(15,23,42,.72);
-}
-
-.cyber-stats strong {
-
-  display:
-    block;
-
-  color:
-    #38bdf8;
-
-  font-size:
-    14px;
-}
-
-.cyber-stats small {
-
-  display:
-    block;
-
-  margin-top:
-    2px;
-
-  color:
-    #64748b;
-
-  font-size:
-    7px;
-
-  font-weight:
-    800;
-
-  letter-spacing:
-    .08em;
-}
-
-
-/* =========================================================
-   CYBER TAGS
-   ========================================================= */
-
-.cyber-tags {
-
-  display:
-    flex;
-
-  flex-wrap:
-    wrap;
-
-  gap:
-    6px;
-
-  margin-top:
-    2px;
-}
-
-.cyber-tags span {
-
-  padding:
-    4px 7px;
-
-  border-radius:
-    999px;
-
-  border:
-    1px solid
-    rgba(56,189,248,.12);
-
-  background:
-    rgba(56,189,248,.035);
-
-  color:
-    #7dd3fc;
-
-  font-size:
-    7px;
-
-  font-weight:
-    800;
-
-  letter-spacing:
-    .08em;
-}
-
-
-/* =========================================================
-   ANIMATIONS
-   ========================================================= */
-
-@keyframes cyberScan {
-
-  0% {
-    top: 0;
-  }
-
-  50% {
-    top: calc(100% - 3px);
-  }
-
-  100% {
-    top: 0;
-  }
-
-}
-
-@keyframes scannerPulse {
-
-  0%,
-  100% {
-    opacity: .5;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-}
-
-@keyframes cursorBlink {
-
-  0%,
-  49% {
-    opacity: 1;
-  }
-
-  50%,
-  100% {
-    opacity: 0;
-  }
-
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-  .brand-logo img {
-    width: 42px;
-    height: 42px;
-  }
-
-  .brand-words .cyberx {
-    font-size: 17px;
-  }
-
-  .brand-words .academy {
-    font-size: 8px;
-    letter-spacing: .28em;
-  }
-
-  .terminal.cyber-profile {
-    max-width: 100%;
-    padding: 10px !important;
-  }
-
-  .image-terminal {
-    top: 12px;
-    left: 12px;
-    max-width: 90%;
-  }
-
-  .typing-line {
-    font-size: 10px;
-  }
-
-  .cyber-profile-info > div:first-child {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-}
-
-</style>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="CyberX Academy — Learn cybersecurity, networking and Linux through beginner-friendly courses, practical labs, visual learning and career-focused guidance."
+  >
+
+  <meta
+    name="keywords"
+    content="CyberX Academy, cybersecurity, cybersecurity courses, ethical hacking, networking, Linux, cyber security training, cybersecurity roadmap"
+  >
+
+  <meta
+    name="author"
+    content="CyberX Academy"
+  >
+
+  <meta
+    name="robots"
+    content="index, follow"
+  >
+
+  <meta
+    name="theme-color"
+    content="#06111f"
+  >
+
+  <meta
+    property="og:title"
+    content="CyberX Academy — Learn • Practice • Secure"
+  >
+
+  <meta
+    property="og:description"
+    content="Learn cybersecurity, networking and Linux through structured lessons, practical labs and career-focused learning."
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <title>
+    CyberX Academy | Cybersecurity Education & Practical Labs
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+
+  <style>
+
+    /* =========================================
+       CYBERX BRAND
+       ========================================= */
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: max-content;
+    }
+
+    .brand-logo img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid rgba(56,189,248,.35);
+
+      box-shadow:
+        0 0 18px rgba(56,189,248,.18);
+    }
+
+    .brand-words {
+      display: flex;
+      flex-direction: column;
+      line-height: .95;
+      letter-spacing: .02em;
+    }
+
+    .brand-words .cyberx {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: .04em;
+
+      background:
+        linear-gradient(
+          90deg,
+          #f8fafc 0%,
+          #f8fafc 62%,
+          #38bdf8 100%
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+
+      text-transform: uppercase;
+    }
+
+    .brand-words .academy {
+      margin-top: 4px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .38em;
+      color: #94a3b8;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 600px) {
+
+      .brand-logo img {
+        width: 42px;
+        height: 42px;
+      }
+
+      .brand-words .cyberx {
+        font-size: 17px;
+      }
+
+      .brand-words .academy {
+        font-size: 8px;
+        letter-spacing: .28em;
+      }
+
+    }
+
+  </style>
 
 </head>
 
@@ -826,309 +145,538 @@ href="styles.css">
 <body>
 
 
-<!-- ======================================================
-     NAVIGATION
-     ====================================================== -->
+  <!-- =========================================
+       HEADER
+       ========================================= -->
 
-<header class="nav">
+  <header class="nav">
 
-  <div class="wrap navin">
-
-    <a
-      class="brand-logo"
-      href="index.html"
-      aria-label="CyberX Academy Home"
-    >
-
-      <img
-        src="cyberx-logo-mark.png"
-        alt="CyberX Academy shield logo"
-      >
-
-      <span class="brand-words">
-
-        <span class="cyberx">
-          CyberX
-        </span>
-
-        <span class="academy">
-          Academy
-        </span>
-
-      </span>
-
-    </a>
-
-
-    <nav>
+    <div class="wrap navin">
 
       <a
-        class="active"
+        class="brand-logo"
         href="index.html"
+        aria-label="CyberX Academy Home"
       >
-        Home
-      </a>
 
-      <a href="courses.html">
-        Courses
-      </a>
+        <img
+          src="cyberx-logo-mark.png"
+          alt="CyberX Academy shield logo"
+        >
 
-      <a href="roadmap.html">
-        Roadmap
-      </a>
+        <span class="brand-words">
 
-      <a href="blog.html">
-        Blog
-      </a>
+          <span class="cyberx">
+            CyberX
+          </span>
 
-      <a href="videos.html">
-        Videos
-      </a>
+          <span class="academy">
+            Academy
+          </span>
 
-      <a href="about.html">
-        About
-      </a>
-
-      <a href="contact.html">
-        Contact
-      </a>
-
-      <a
-        class="login"
-        href="login.html"
-      >
-        Student Login
-      </a>
-
-    </nav>
-
-
-    <button
-      class="menu"
-      onclick="toggleNav()"
-      aria-label="Open menu"
-    >
-      ☰
-    </button>
-
-  </div>
-
-</header>
-
-
-
-<!-- ======================================================
-     MAIN
-     ====================================================== -->
-
-<main>
-
-
-<!-- ======================================================
-     HERO
-     ====================================================== -->
-
-<section class="hero">
-
-  <div class="wrap hero-grid">
-
-
-    <!-- LEFT SIDE -->
-
-    <div>
-
-      <span class="badge">
-        CYBERSECURITY EDUCATION • BEGINNER FRIENDLY
-      </span>
-
-
-      <h1>
-
-        Learn cybersecurity.
-
-        <br>
-
-        <span>
-          Build real skills.
         </span>
 
-      </h1>
+      </a>
 
 
-      <p>
-        Master cybersecurity, networking and Linux through
-        structured lessons, visual learning, practical labs
-        and career-focused guidance.
-      </p>
-
-
-      <div class="actions">
+      <nav>
 
         <a
-          class="btn"
-          href="courses.html"
+          class="active"
+          href="index.html"
         >
-          Explore Courses →
+          Home
+        </a>
+
+        <a href="courses.html">
+          Courses
+        </a>
+
+        <a href="roadmap.html">
+          Roadmap
+        </a>
+
+        <a href="blog.html">
+          Blog
+        </a>
+
+        <a href="videos.html">
+          Videos
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="contact.html">
+          Contact
         </a>
 
         <a
-          class="btn ghost"
-          href="roadmap.html"
+          class="login"
+          href="login.html"
         >
-          View Roadmap
+          Student Login
         </a>
 
-      </div>
+      </nav>
 
 
-      <div class="trust">
-
-        <span>
-          ✓ Beginner-first
-        </span>
-
-        <span>
-          ✓ Practical learning
-        </span>
-
-        <span>
-          ✓ Career focused
-        </span>
-
-      </div>
+      <button
+        class="menu"
+        onclick="toggleNav()"
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
 
     </div>
 
+  </header>
 
 
-    <!-- RIGHT SIDE -->
 
-    <div class="terminal cyber-profile">
+  <!-- =========================================
+       MAIN
+       ========================================= -->
 
-
-      <!-- SCAN HEADER -->
-
-      <div class="cyber-profile-header">
-
-        <span class="scanner-dot"></span>
-
-        <span>
-          CYBERX SECURITY SCAN
-        </span>
-
-        <span class="live-tag">
-          LIVE
-        </span>
-
-      </div>
+  <main>
 
 
-      <!-- PHOTO -->
+    <!-- =========================================
+         HERO
+         ========================================= -->
 
-      <div class="cyber-profile-image">
+    <section class="hero">
 
-
-        <img
-          src="profile.jpg"
-          alt="CyberX Academy Profile"
-        >
+      <div class="wrap hero-grid">
 
 
-        <div class="cyber-grid"></div>
+        <!-- LEFT -->
+
+        <div>
+
+          <span class="badge">
+            CYBERSECURITY EDUCATION • BEGINNER FRIENDLY
+          </span>
 
 
-        <!-- TRANSPARENT TYPEWRITER -->
+          <h1>
 
-       <div class="image-terminal">
+            Learn cybersecurity.
 
-  <div id="codeStream" class="code-stream"></div>
+            <br>
 
-</div>
+            <span>
+              Build real skills.
+            </span>
+
+          </h1>
 
 
-        <!-- SCAN LINE -->
+          <p>
+            Master cybersecurity, networking and Linux through
+            structured lessons, visual learning, practical labs
+            and career-focused guidance.
+          </p>
 
-       
+
+          <div class="actions">
+
+            <a
+              class="btn"
+              href="courses.html"
+            >
+              Explore Courses →
+            </a>
+
+            <a
+              class="btn ghost"
+              href="roadmap.html"
+            >
+              View Roadmap
+            </a>
+
+          </div>
 
 
-        <!-- SECURITY STATUS -->
+          <div class="trust">
 
-        <div class="scan-label">
-          ● SYSTEM SECURED
+            <span>
+              ✓ Beginner-first
+            </span>
+
+            <span>
+              ✓ Practical learning
+            </span>
+
+            <span>
+              ✓ Career focused
+            </span>
+
+          </div>
+
         </div>
 
 
-        <!-- HUD CORNERS -->
 
-        <div class="corner top-left"></div>
+        <!-- RIGHT / CYBER PROFILE -->
 
-        <div class="corner top-right"></div>
+        <div class="terminal cyber-profile">
 
-        <div class="corner bottom-left"></div>
 
-        <div class="corner bottom-right"></div>
+          <!-- SCANNER HEADER -->
 
+          <div class="cyber-profile-header">
+
+            <span class="scanner-dot"></span>
+
+            <span>
+              CYBERX SECURITY SCAN
+            </span>
+
+            <span class="live-tag">
+              LIVE
+            </span>
+
+          </div>
+
+
+          <!-- PHOTO AREA -->
+
+          <div class="cyber-profile-image">
+
+
+            <img
+              src="profile.jpg"
+              alt="CyberX Academy Profile"
+            >
+
+
+            <div class="cyber-grid"></div>
+
+
+            <!-- REAL-TIME JAVASCRIPT SCANNER -->
+
+            <div
+              id="scanLine"
+              class="scan-line-moving"
+            ></div>
+
+
+            <!-- TRANSPARENT CODE STREAM -->
+
+            <div class="image-terminal">
+
+              <div
+                id="codeStream"
+                class="code-stream"
+              ></div>
+
+            </div>
+
+
+            <!-- SYSTEM STATUS -->
+
+            <div class="scan-label">
+              ● SYSTEM SECURED
+            </div>
+
+
+            <!-- HUD CORNERS -->
+
+            <div class="corner top-left"></div>
+
+            <div class="corner top-right"></div>
+
+            <div class="corner bottom-left"></div>
+
+            <div class="corner bottom-right"></div>
+
+
+          </div>
+
+
+          <!-- PROFILE INFO -->
+
+          <div class="cyber-profile-info">
+
+
+            <div>
+
+              <strong>
+                CYBERX ACADEMY
+              </strong>
+
+              <span>
+                SECURITY MODE: ACTIVE
+              </span>
+
+            </div>
+
+
+            <div class="cyber-stats">
+
+
+              <div>
+
+                <strong>
+                  100%
+                </strong>
+
+                <small>
+                  SECURE
+                </small>
+
+              </div>
+
+
+              <div>
+
+                <strong>
+                  24/7
+                </strong>
+
+                <small>
+                  LEARNING
+                </small>
+
+              </div>
+
+
+              <div>
+
+                <strong>
+                  ACTIVE
+                </strong>
+
+                <small>
+                  STATUS
+                </small>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+
+          <!-- TAGS -->
+
+          <div class="cyber-tags">
+
+            <span>
+              NETWORKING
+            </span>
+
+            <span>
+              LINUX
+            </span>
+
+            <span>
+              SECURITY
+            </span>
+
+            <span>
+              LABS
+            </span>
+
+          </div>
+
+
+        </div>
 
       </div>
 
+    </section>
 
-      <!-- SECURITY INFO -->
 
-      <div class="cyber-profile-info">
+
+    <!-- =========================================
+         FOUNDATION
+         ========================================= -->
+
+    <section>
+
+      <div class="wrap">
+
+
+        <div class="head">
+
+          <span class="eyebrow">
+            START HERE
+          </span>
+
+          <h2>
+            Build your cybersecurity foundation.
+          </h2>
+
+          <p>
+            Follow a structured learning path instead of
+            jumping randomly between tools and technologies.
+          </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+          <article>
+
+            <div class="icon">
+              🛡️
+            </div>
+
+            <h3>
+              Cybersecurity Basics
+            </h3>
+
+            <p>
+              Learn threats, vulnerabilities, authentication,
+              malware and core security principles.
+            </p>
+
+            <a href="courses.html">
+              Learn more →
+            </a>
+
+          </article>
+
+
+          <article>
+
+            <div class="icon">
+              🐧
+            </div>
+
+            <h3>
+              Linux for Beginners
+            </h3>
+
+            <p>
+              Understand the terminal, files, permissions,
+              processes and essential Linux commands.
+            </p>
+
+            <a href="courses.html">
+              Learn more →
+            </a>
+
+          </article>
+
+
+          <article>
+
+            <div class="icon">
+              🌐
+            </div>
+
+            <h3>
+              Networking Essentials
+            </h3>
+
+            <p>
+              Learn IP, DNS, DHCP, TCP/IP, ports, routers,
+              firewalls and network fundamentals.
+            </p>
+
+            <a href="courses.html">
+              Learn more →
+            </a>
+
+          </article>
+
+
+          <article>
+
+            <div class="icon">
+              💻
+            </div>
+
+            <h3>
+              Practical Security Labs
+            </h3>
+
+            <p>
+              Turn theory into hands-on experience through
+              safe and legal cybersecurity practice.
+            </p>
+
+            <a href="courses.html">
+              Learn more →
+            </a>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         ROADMAP
+         ========================================= -->
+
+    <section class="band">
+
+      <div class="wrap split">
 
 
         <div>
 
-          <strong>
-            CYBERX ACADEMY
-          </strong>
-
-          <span>
-            SECURITY MODE: ACTIVE
+          <span class="eyebrow">
+            LEARNING ROADMAP
           </span>
 
+          <h2>
+            From zero to cybersecurity confidence.
+          </h2>
+
+          <p>
+            Start with computer fundamentals, master networking,
+            understand security and then build practical skills.
+          </p>
+
+          <a
+            class="btn"
+            href="roadmap.html"
+          >
+            See Full Roadmap
+          </a>
+
         </div>
 
 
-        <div class="cyber-stats">
+        <div class="timeline">
 
 
           <div>
-
-            <strong>
-              100%
-            </strong>
-
-            <small>
-              SECURE
-            </small>
-
+            <span>01</span>
+            Computer &amp; OS Basics
           </div>
 
 
           <div>
-
-            <strong>
-              24/7
-            </strong>
-
-            <small>
-              LEARNING
-            </small>
-
+            <span>02</span>
+            Networking Fundamentals
           </div>
 
 
           <div>
+            <span>03</span>
+            Cybersecurity Concepts
+          </div>
 
-            <strong>
-              ACTIVE
-            </strong>
 
-            <small>
-              STATUS
-            </small>
-
+          <div>
+            <span>04</span>
+            Tools, Labs &amp; Projects
           </div>
 
 
@@ -1136,540 +684,471 @@ href="styles.css">
 
       </div>
 
+    </section>
 
-      <!-- TAGS -->
 
-      <div class="cyber-tags">
 
-        <span>
-          NETWORKING
-        </span>
+    <!-- =========================================
+         WHY CYBERX
+         ========================================= -->
 
-        <span>
-          LINUX
-        </span>
+    <section>
 
-        <span>
-          SECURITY
-        </span>
+      <div class="wrap">
 
-        <span>
-          LABS
-        </span>
+
+        <div class="head">
+
+          <span class="eyebrow">
+            WHY CYBERX ACADEMY?
+          </span>
+
+          <h2>
+            Learn with a clear direction.
+          </h2>
+
+          <p>
+            CyberX Academy focuses on understanding concepts,
+            practicing skills and building cybersecurity confidence.
+          </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+          <article>
+
+            <div class="icon">
+              📚
+            </div>
+
+            <h3>
+              Structured Learning
+            </h3>
+
+            <p>
+              Learn step by step from computer and networking
+              fundamentals to cybersecurity.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <div class="icon">
+              🧪
+            </div>
+
+            <h3>
+              Practice Focused
+            </h3>
+
+            <p>
+              Understand concepts and apply them through safe,
+              legal and practical exercises.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <div class="icon">
+              🎯
+            </div>
+
+            <h3>
+              Career Focused
+            </h3>
+
+            <p>
+              Build knowledge that can support your journey
+              toward cybersecurity and IT careers.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <div class="icon">
+              🌱
+            </div>
+
+            <h3>
+              Beginner Friendly
+            </h3>
+
+            <p>
+              Complex cybersecurity concepts are explained
+              in a simple and understandable way.
+            </p>
+
+          </article>
+
+
+        </div>
 
       </div>
 
-
-    </div>
-
-  </div>
-
-</section>
+    </section>
 
 
 
-<!-- ======================================================
-     FOUNDATION
-     ====================================================== -->
+    <!-- =========================================
+         CTA
+         ========================================= -->
 
-<section>
+    <section class="cta-wrap">
 
-  <div class="wrap">
-
-
-    <div class="head">
-
-      <span class="eyebrow">
-        START HERE
-      </span>
-
-      <h2>
-        Build your cybersecurity foundation.
-      </h2>
-
-      <p>
-        Follow a structured learning path instead of jumping
-        randomly between tools and technologies.
-      </p>
-
-    </div>
+      <div class="wrap cta">
 
 
-    <div class="cards">
+        <span class="eyebrow">
+          START YOUR JOURNEY
+        </span>
 
 
-      <article>
+        <h2>
+          Ready to start learning cybersecurity?
+        </h2>
 
-        <div class="icon">
-          🛡️
-        </div>
-
-        <h3>
-          Cybersecurity Basics
-        </h3>
 
         <p>
-          Learn threats, vulnerabilities, authentication,
-          malware and core security principles.
+          Explore the courses and follow the CyberX Academy
+          roadmap to build your foundation.
         </p>
 
-        <a href="courses.html">
-          Learn more →
-        </a>
 
-      </article>
+        <div class="actions">
 
+          <a
+            class="btn"
+            href="courses.html"
+          >
+            Explore Courses →
+          </a>
 
-      <article>
+          <a
+            class="btn ghost"
+            href="roadmap.html"
+          >
+            View Roadmap
+          </a>
 
-        <div class="icon">
-          🐧
         </div>
 
-        <h3>
-          Linux for Beginners
-        </h3>
 
-        <p>
-          Understand the terminal, files, permissions,
-          processes and essential Linux commands.
-        </p>
+      </div>
 
-        <a href="courses.html">
-          Learn more →
-        </a>
-
-      </article>
+    </section>
 
 
-      <article>
-
-        <div class="icon">
-          🌐
-        </div>
-
-        <h3>
-          Networking Essentials
-        </h3>
-
-        <p>
-          Learn IP, DNS, DHCP, TCP/IP, ports, routers,
-          firewalls and network fundamentals.
-        </p>
-
-        <a href="courses.html">
-          Learn more →
-        </a>
-
-      </article>
-
-
-      <article>
-
-        <div class="icon">
-          💻
-        </div>
-
-        <h3>
-          Practical Security Labs
-        </h3>
-
-        <p>
-          Turn theory into hands-on experience through
-          safe and legal cybersecurity practice.
-        </p>
-
-        <a href="courses.html">
-          Learn more →
-        </a>
-
-      </article>
-
-
-    </div>
-
-  </div>
-
-</section>
+  </main>
 
 
 
-<!-- ======================================================
-     ROADMAP
-     ====================================================== -->
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
 
-<section class="band">
+  <footer>
 
-  <div class="wrap split">
-
-
-    <div>
-
-      <span class="eyebrow">
-        LEARNING ROADMAP
-      </span>
-
-      <h2>
-        From zero to cybersecurity confidence.
-      </h2>
-
-      <p>
-        Start with computer fundamentals, master networking,
-        understand security and then build practical skills.
-      </p>
-
-      <a
-        class="btn"
-        href="roadmap.html"
-      >
-        See Full Roadmap
-      </a>
-
-    </div>
-
-
-    <div class="timeline">
-
+    <div class="wrap foot">
 
       <div>
-        <span>01</span>
-        Computer &amp; OS Basics
+
+        <strong>
+          Cyber<span>X</span> Academy
+        </strong>
+
+        <p>
+          Learn • Practice • Secure
+        </p>
+
       </div>
 
 
       <div>
-        <span>02</span>
-        Networking Fundamentals
+
+        <a
+          href="mailto:support.cyberxacademy@gmail.com"
+        >
+          support.cyberxacademy@gmail.com
+        </a>
+
+        <p>
+          © CyberX Academy. 2026. All Rights Reserved.
+        </p>
+
       </div>
 
-
-      <div>
-        <span>03</span>
-        Cybersecurity Concepts
-      </div>
-
-
-      <div>
-        <span>04</span>
-        Tools, Labs &amp; Projects
-      </div>
-
-
     </div>
 
-  </div>
+  </footer>
 
-</section>
 
 
+  <!-- =========================================
+       EXISTING JS
+       ========================================= -->
 
-<!-- ======================================================
-     WHY CYBERX
-     ====================================================== -->
+  <script src="script.js"></script>
 
-<section>
+  <script src="footer.js"></script>
 
-  <div class="wrap">
 
 
-    <div class="head">
+  <!-- =========================================
+       SEQUENTIAL TYPEWRITER CODE
+       ========================================= -->
 
-      <span class="eyebrow">
-        WHY CYBERX ACADEMY?
-      </span>
+  <script>
 
-      <h2>
-        Learn with a clear direction.
-      </h2>
+    (function () {
 
-      <p>
-        CyberX Academy focuses on understanding concepts,
-        practicing skills and building cybersecurity confidence.
-      </p>
+      const stream =
+        document.getElementById("codeStream");
 
-    </div>
+      if (!stream) {
+        return;
+      }
 
 
-    <div class="cards">
+      const lines = [
 
+        {
+          text: "$ whoami",
+          color: "#22c55e"
+        },
 
-      <article>
+        {
+          text: "cybersecurity_learner",
+          color: "#f97316"
+        },
 
-        <div class="icon">
-          📚
-        </div>
+        {
+          text: "$ skills --learn",
+          color: "#ef4444"
+        },
 
-        <h3>
-          Structured Learning
-        </h3>
+        {
+          text: "Networking ✓",
+          color: "#22c55e"
+        },
 
-        <p>
-          Learn step by step from computer and networking
-          fundamentals to cybersecurity.
-        </p>
+        {
+          text: "Linux ✓",
+          color: "#f97316"
+        },
 
-      </article>
+        {
+          text: "Security ✓",
+          color: "#ef4444"
+        },
 
+        {
+          text: "Practical Labs ✓",
+          color: "#22c55e"
+        },
 
-      <article>
+        {
+          text: "$ status",
+          color: "#f97316"
+        },
 
-        <div class="icon">
-          🧪
-        </div>
+        {
+          text: "Ready to learn_",
+          color: "#22c55e"
+        }
 
-        <h3>
-          Practice Focused
-        </h3>
+      ];
 
-        <p>
-          Understand concepts and apply them through safe,
-          legal and practical exercises.
-        </p>
 
-      </article>
+      let lineIndex = 0;
 
 
-      <article>
+      function typeLine() {
 
-        <div class="icon">
-          🎯
-        </div>
+        if (
+          lineIndex >=
+          lines.length
+        ) {
 
-        <h3>
-          Career Focused
-        </h3>
+          setTimeout(
+            function () {
 
-        <p>
-          Build knowledge that can support your journey
-          toward cybersecurity and IT careers.
-        </p>
+              stream.innerHTML = "";
 
-      </article>
+              lineIndex = 0;
 
+              typeLine();
 
-      <article>
+            },
+            2500
+          );
 
-        <div class="icon">
-          🌱
-        </div>
+          return;
+        }
 
-        <h3>
-          Beginner Friendly
-        </h3>
 
-        <p>
-          Complex cybersecurity concepts are explained in
-          a simple and understandable way.
-        </p>
+        const item =
+          lines[lineIndex];
 
-      </article>
 
+        const line =
+          document.createElement("div");
 
-    </div>
 
-  </div>
+        line.className =
+          "code-line";
 
-</section>
 
+        line.style.color =
+          item.color;
 
 
-<!-- ======================================================
-     CTA
-     ====================================================== -->
+        stream.appendChild(line);
 
-<section class="cta-wrap">
 
-  <div class="wrap cta">
+        let charIndex = 0;
 
 
-    <span class="eyebrow">
-      START YOUR JOURNEY
-    </span>
+        function typeCharacter() {
 
+          line.textContent =
+            item.text.substring(
+              0,
+              charIndex + 1
+            );
 
-    <h2>
-      Ready to start learning cybersecurity?
-    </h2>
 
+          charIndex++;
 
-    <p>
-      Explore the courses and follow the CyberX Academy
-      roadmap to build your foundation.
-    </p>
 
+          if (
+            charIndex <
+            item.text.length
+          ) {
 
-    <div class="actions">
+            setTimeout(
+              typeCharacter,
+              55
+            );
 
+          }
 
-      <a
-        class="btn"
-        href="courses.html"
-      >
-        Explore Courses →
-      </a>
+          else {
 
+            lineIndex++;
 
-      <a
-        class="btn ghost"
-        href="roadmap.html"
-      >
-        View Roadmap
-      </a>
+            setTimeout(
+              typeLine,
+              450
+            );
 
+          }
 
-    </div>
+        }
 
 
-  </div>
+        typeCharacter();
 
-</section>
+      }
 
 
-</main>
+      typeLine();
 
+    })();
 
+  </script>
 
-<!-- ======================================================
-     FOOTER
-     ====================================================== -->
 
-<footer>
 
-  <div class="wrap foot">
+  <!-- =========================================
+       REAL-TIME TOP → BOTTOM SCANNER
+       ========================================= -->
 
+  <script>
 
-    <div>
+    (function () {
 
-      <strong>
-        Cyber<span>X</span> Academy
-      </strong>
+      const scanner =
+        document.getElementById("scanLine");
 
-      <p>
-        Learn • Practice • Secure
-      </p>
-
-    </div>
-
-
-    <div>
-
-      <a
-        href="mailto:support.cyberxacademy@gmail.com"
-      >
-        support.cyberxacademy@gmail.com
-      </a>
-
-      <p>
-        © CyberX Academy. 2026. All Rights Reserved.
-      </p>
-
-    </div>
-
-
-  </div>
-
-</footer>
-
-
-
-<!-- ======================================================
-     EXISTING JAVASCRIPT
-     ====================================================== -->
-
-<script src="script.js"></script>
-
-<script src="footer.js"></script>
-
-
-
-<!-- ======================================================
-     TYPEWRITER EFFECT
-     ====================================================== -->
-
-<script>
-(function () {
-
-  const stream = document.getElementById("codeStream");
-
-  if (!stream) return;
-
-  const lines = [
-    { text: "$ whoami", color: "#22c55e" },
-    { text: "cybersecurity_learner", color: "#f97316" },
-    { text: "$ skills --learn", color: "#ef4444" },
-    { text: "Networking ✓", color: "#22c55e" },
-    { text: "Linux ✓", color: "#f97316" },
-    { text: "Security ✓", color: "#ef4444" },
-    { text: "Practical Labs ✓", color: "#22c55e" },
-    { text: "$ status", color: "#f97316" },
-    { text: "Ready to learn_", color: "#22c55e" }
-  ];
-
-  let lineIndex = 0;
-
-  function typeLine() {
-
-    if (lineIndex >= lines.length) {
-
-      setTimeout(() => {
-
-        stream.innerHTML = "";
-
-        lineIndex = 0;
-
-        typeLine();
-
-      }, 2500);
-
-      return;
-    }
-
-    const item = lines[lineIndex];
-
-    const line = document.createElement("div");
-
-    line.className = "code-line";
-
-    line.style.color = item.color;
-
-    stream.appendChild(line);
-
-    let charIndex = 0;
-
-    function typeCharacter() {
-
-      line.textContent =
-        item.text.substring(0, charIndex + 1);
-
-      charIndex++;
-
-      if (charIndex < item.text.length) {
-
-        setTimeout(
-          typeCharacter,
-          55
+      const photo =
+        document.querySelector(
+          ".cyber-profile-image"
         );
 
-      } else {
 
-        lineIndex++;
+      if (
+        !scanner ||
+        !photo
+      ) {
+        return;
+      }
 
-        setTimeout(
-          typeLine,
-          450
+
+      let startTime =
+        null;
+
+
+      const duration =
+        2800;
+
+
+      function animateScan(timestamp) {
+
+        if (!startTime) {
+
+          startTime =
+            timestamp;
+
+        }
+
+
+        const elapsed =
+          (timestamp - startTime)
+          % duration;
+
+
+        const progress =
+          elapsed / duration;
+
+
+        const maxMove =
+          photo.clientHeight -
+          scanner.offsetHeight;
+
+
+        const y =
+          progress * maxMove;
+
+
+        scanner.style.transform =
+          "translateY("
+          + y
+          + "px)";
+
+
+        requestAnimationFrame(
+          animateScan
         );
 
       }
 
-    }
 
-    typeCharacter();
-  }
+      requestAnimationFrame(
+        animateScan
+      );
 
-  typeLine();
+    })();
 
-})();
-</script>
+  </script>
 
 
 </body>
