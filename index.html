@@ -1595,150 +1595,74 @@ href="styles.css">
      ====================================================== -->
 
 <script>
-
 (function () {
 
-  const output =
-    document.getElementById("codeLine");
+  const output = document.getElementById("codeLine");
 
-  if (!output) {
-    return;
-  }
-
+  if (!output) return;
 
   const lines = [
-
-    {
-      text: "$ whoami",
-      color: "#22c55e"
-    },
-
-    {
-      text: "cybersecurity_learner",
-      color: "#f97316"
-    },
-
-    {
-      text: "$ skills --learn",
-      color: "#ef4444"
-    },
-
-    {
-      text: "Networking ✓",
-      color: "#22c55e"
-    },
-
-    {
-      text: "Linux ✓",
-      color: "#f97316"
-    },
-
-    {
-      text: "Security ✓",
-      color: "#ef4444"
-    },
-
-    {
-      text: "Practical Labs ✓",
-      color: "#22c55e"
-    },
-
-    {
-      text: "$ status",
-      color: "#f97316"
-    },
-
-    {
-      text: "Ready to learn_",
-      color: "#22c55e"
-    }
-
+    { text: "$ whoami", color: "#22c55e" },
+    { text: "cybersecurity_learner", color: "#f97316" },
+    { text: "$ skills --learn", color: "#ef4444" },
+    { text: "Networking ✓", color: "#22c55e" },
+    { text: "Linux ✓", color: "#f97316" },
+    { text: "Security ✓", color: "#ef4444" },
+    { text: "Practical Labs ✓", color: "#22c55e" },
+    { text: "$ status", color: "#f97316" },
+    { text: "Ready to learn_", color: "#22c55e" }
   ];
 
-
   let lineIndex = 0;
-
   let charIndex = 0;
 
-  let deleting = false;
+  function typeNextLine() {
 
+    const item = lines[lineIndex];
 
-  function typeWriter() {
+    output.innerHTML = "";
 
-    const current =
-      lines[lineIndex];
+    const line = document.createElement("div");
 
+    line.textContent = "";
 
-    output.style.color =
-      current.color;
+    line.style.color = item.color;
 
+    output.appendChild(line);
 
-    if (!deleting) {
+    charIndex = 0;
 
-      output.textContent =
-        current.text.substring(
-          0,
-          charIndex + 1
-        );
+    function typeCharacter() {
+
+      line.textContent =
+        item.text.substring(0, charIndex + 1);
 
       charIndex++;
 
+      if (charIndex < item.text.length) {
 
-      if (
-        charIndex >=
-        current.text.length
-      ) {
+        setTimeout(typeCharacter, 55);
 
-        deleting = true;
+      } else {
 
-        setTimeout(
-          typeWriter,
-          900
-        );
+        setTimeout(() => {
 
-        return;
-      }
+          lineIndex =
+            (lineIndex + 1) % lines.length;
 
-    }
+          typeNextLine();
 
-    else {
-
-      output.textContent =
-        current.text.substring(
-          0,
-          charIndex - 1
-        );
-
-      charIndex--;
-
-
-      if (charIndex <= 0) {
-
-        deleting = false;
-
-        lineIndex =
-          (lineIndex + 1)
-          % lines.length;
+        }, 900);
 
       }
-
     }
 
-
-    setTimeout(
-      typeWriter,
-      deleting
-        ? 35
-        : 65
-    );
-
+    typeCharacter();
   }
 
-
-  typeWriter();
+  typeNextLine();
 
 })();
-
 </script>
 
 
