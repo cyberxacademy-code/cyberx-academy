@@ -1039,19 +1039,11 @@ href="styles.css">
 
         <!-- TRANSPARENT TYPEWRITER -->
 
-        <div class="image-terminal">
+       <div class="image-terminal">
 
-          <div class="typing-line">
+  <div id="codeStream" class="code-stream"></div>
 
-            <span id="codeLine"></span>
-
-            <span class="cursor">
-              ▌
-            </span>
-
-          </div>
-
-        </div>
+</div>
 
 
         <!-- SCAN LINE -->
@@ -1597,9 +1589,9 @@ href="styles.css">
 <script>
 (function () {
 
-  const output = document.getElementById("codeLine");
+  const stream = document.getElementById("codeStream");
 
-  if (!output) return;
+  if (!stream) return;
 
   const lines = [
     { text: "$ whoami", color: "#22c55e" },
@@ -1614,23 +1606,35 @@ href="styles.css">
   ];
 
   let lineIndex = 0;
-  let charIndex = 0;
 
-  function typeNextLine() {
+  function typeLine() {
+
+    if (lineIndex >= lines.length) {
+
+      setTimeout(() => {
+
+        stream.innerHTML = "";
+
+        lineIndex = 0;
+
+        typeLine();
+
+      }, 2500);
+
+      return;
+    }
 
     const item = lines[lineIndex];
 
-    output.innerHTML = "";
-
     const line = document.createElement("div");
 
-    line.textContent = "";
+    line.className = "code-line";
 
     line.style.color = item.color;
 
-    output.appendChild(line);
+    stream.appendChild(line);
 
-    charIndex = 0;
+    let charIndex = 0;
 
     function typeCharacter() {
 
@@ -1641,26 +1645,28 @@ href="styles.css">
 
       if (charIndex < item.text.length) {
 
-        setTimeout(typeCharacter, 55);
+        setTimeout(
+          typeCharacter,
+          55
+        );
 
       } else {
 
-        setTimeout(() => {
+        lineIndex++;
 
-          lineIndex =
-            (lineIndex + 1) % lines.length;
-
-          typeNextLine();
-
-        }, 900);
+        setTimeout(
+          typeLine,
+          450
+        );
 
       }
+
     }
 
     typeCharacter();
   }
 
-  typeNextLine();
+  typeLine();
 
 })();
 </script>
