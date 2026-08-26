@@ -358,3 +358,424 @@ button:focus-visible {
   }
 
 }
+/* =========================================
+   CYBERX PHOTO SCANNER + TERMINAL OVERLAY
+   ========================================= */
+
+.terminal.cyber-profile {
+  position: relative;
+  width: 100%;
+  max-width: 470px;
+  min-height: 0;
+  padding: 14px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 24px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(3, 18, 18, 0.96),
+    rgba(5, 12, 25, 0.98)
+  );
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(34, 197, 94, 0.08);
+}
+
+.cyber-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+
+  color: #86efac;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.scanner-dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #22c55e;
+
+  box-shadow:
+    0 0 8px #22c55e,
+    0 0 18px rgba(34, 197, 94, 0.7);
+
+  animation: scannerPulse 1.3s infinite;
+}
+
+.live-tag {
+  margin-left: auto;
+  padding: 4px 7px;
+
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: 6px;
+
+  color: #86efac;
+  background: rgba(34, 197, 94, 0.06);
+
+  font-size: 8px;
+}
+
+/* PHOTO */
+
+.cyber-profile-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+
+  border-radius: 18px;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  background: #020617;
+}
+
+.cyber-profile-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+
+  filter:
+    brightness(0.94)
+    contrast(1.04)
+    saturate(0.96);
+}
+
+/* GRID */
+
+.cyber-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      rgba(34, 197, 94, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 100% 7px;
+}
+
+/* TERMINAL OVER PHOTO */
+
+.image-terminal {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 4;
+
+  width: 220px;
+  max-width: calc(100% - 32px);
+
+  padding: 12px;
+
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 10px;
+
+  background: rgba(2, 6, 23, 0.68);
+
+  backdrop-filter: blur(7px);
+
+  color: #e2e8f0;
+
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
+
+  font-size: 10px;
+  line-height: 1.45;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.terminal-line {
+  color: #f8fafc;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.terminal-line span {
+  color: #22c55e;
+}
+
+.terminal-value {
+  color: #93c5fd;
+  margin-bottom: 5px;
+}
+
+.terminal-value b {
+  color: #22c55e;
+  margin-left: 5px;
+
+  text-shadow:
+    0 0 8px rgba(34, 197, 94, 0.8);
+}
+
+.terminal-status {
+  margin-top: 8px;
+}
+
+.terminal-ready {
+  color: #22c55e;
+  font-weight: 800;
+
+  text-shadow:
+    0 0 8px rgba(34, 197, 94, 0.65);
+
+  animation: terminalBlink 1.4s ease-in-out infinite;
+}
+
+/* SCANNER */
+
+.scan-beam {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  height: 3px;
+  z-index: 5;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 8px #22c55e,
+    0 0 20px #22c55e,
+    0 0 45px rgba(34, 197, 94, 0.65);
+
+  animation: scanDown 3s linear infinite;
+}
+
+.scan-beam::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 55px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(34, 197, 94, 0.18),
+    transparent
+  );
+}
+
+.scan-label {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 6;
+
+  padding: 7px 10px;
+
+  border-radius: 7px;
+  border: 1px solid rgba(34, 197, 94, 0.28);
+
+  background: rgba(2, 6, 23, 0.78);
+
+  color: #bbf7d0;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+/* HUD CORNERS */
+
+.corner {
+  position: absolute;
+  z-index: 6;
+  width: 24px;
+  height: 24px;
+}
+
+.top-left {
+  top: 10px;
+  left: 10px;
+  border-top: 2px solid #22c55e;
+  border-left: 2px solid #22c55e;
+}
+
+.top-right {
+  top: 10px;
+  right: 10px;
+  border-top: 2px solid #22c55e;
+  border-right: 2px solid #22c55e;
+}
+
+.bottom-left {
+  bottom: 10px;
+  left: 10px;
+  border-bottom: 2px solid #22c55e;
+  border-left: 2px solid #22c55e;
+}
+
+.bottom-right {
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 2px solid #22c55e;
+  border-right: 2px solid #22c55e;
+}
+
+/* INFO */
+
+.cyber-profile-info {
+  padding: 12px 3px 8px;
+}
+
+.cyber-profile-info > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cyber-profile-info strong {
+  color: #f8fafc;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+
+.cyber-profile-info span {
+  color: #64748b;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+/* STATS */
+
+.cyber-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.cyber-stats > div {
+  padding: 8px;
+  text-align: center;
+
+  border-radius: 10px;
+  border: 1px solid rgba(56, 189, 248, 0.1);
+
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.cyber-stats strong {
+  display: block;
+  color: #38bdf8;
+  font-size: 14px;
+}
+
+.cyber-stats small {
+  display: block;
+  margin-top: 2px;
+  color: #64748b;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+/* TAGS */
+
+.cyber-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.cyber-tags span {
+  padding: 4px 7px;
+
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.12);
+
+  background: rgba(56, 189, 248, 0.035);
+
+  color: #7dd3fc;
+
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+/* ANIMATION */
+
+@keyframes scanDown {
+  0% {
+    top: 0;
+  }
+
+  50% {
+    top: calc(100% - 3px);
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes scannerPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes terminalBlink {
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .terminal.cyber-profile {
+    max-width: 100%;
+    padding: 10px !important;
+  }
+
+  .image-terminal {
+    top: 12px;
+    left: 12px;
+    width: 190px;
+    max-width: calc(100% - 24px);
+    padding: 10px;
+    font-size: 9px;
+  }
+
+  .cyber-profile-info > div:first-child {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
